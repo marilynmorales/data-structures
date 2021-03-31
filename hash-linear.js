@@ -8,7 +8,7 @@ function HashTable(size) {
 HashTable.prototype.put = function(key, value) {
   if(this.limit >= this.size) throw "hash table is full"
   var hashedIndex = this.hash(key);
-  while(this.keys[hashedIndex] != null) {
+  while(this.keys[hashedIndex] !== undefined) {
     hashedIndex++;
     hashedIndex = hashedIndex % this.size;
   }
